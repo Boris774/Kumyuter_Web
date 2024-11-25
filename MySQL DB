@@ -1,0 +1,246 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: sql308.byetcluster.com
+-- Generation Time: Nov 13, 2024 at 01:52 AM
+-- Server version: 10.6.19-MariaDB
+-- PHP Version: 7.2.22
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `if0_37367076_kumyuter`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_drivers`
+--
+
+CREATE TABLE `tbl_drivers` (
+  `ID` int(10) NOT NULL,
+  `CODE` varchar(30) NOT NULL,
+  `LAST` varchar(60) NOT NULL,
+  `FIRST` varchar(60) NOT NULL,
+  `MIDDLE` varchar(60) NOT NULL,
+  `GENDER` varchar(6) NOT NULL,
+  `CONTACT` varchar(11) NOT NULL,
+  `ADDRESS` text NOT NULL,
+  `USERNAME` varchar(60) NOT NULL,
+  `PASSWORD` varchar(60) NOT NULL,
+  `DLNUM` varchar(15) NOT NULL,
+  `DLCODE` varchar(30) NOT NULL,
+  `DLEXPIRY` varchar(30) NOT NULL,
+  `MOTORPLATE` varchar(30) NOT NULL,
+  `FRANCHISEEXPIRY` varchar(30) NOT NULL,
+  `ROLE` varchar(15) NOT NULL,
+  `QRCODE` varchar(200) NOT NULL,
+  `PROFILE` varchar(100) NOT NULL,
+  `STATUS` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+--
+-- Dumping data for table `tbl_drivers`
+--
+
+INSERT INTO `tbl_drivers` (`ID`, `CODE`, `LAST`, `FIRST`, `MIDDLE`, `GENDER`, `CONTACT`, `ADDRESS`, `USERNAME`, `PASSWORD`, `DLNUM`, `DLCODE`, `DLEXPIRY`, `MOTORPLATE`, `FRANCHISEEXPIRY`, `ROLE`, `QRCODE`, `PROFILE`, `STATUS`) VALUES
+(31, '241104-144945-43664', 'Labanancia', 'John Noel', 'Badilla', 'Male', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', '', '', 'H08-24-000522', 'A,A1', '2024-05-16', 'HAH323', '2024-11-10', 'Driver', 'qrcodes/241104-144945-43664.png', 'Unknown', 'ACTIVE'),
+(32, '241104-152049-80143', 'Raga', 'Ivan Jade', 'Baragenio', 'Male', '09975634127', 'Brgy. Matobato P6', '', '', 'H08-24-000523', 'A,A1', '2024-11-04', 'HAH324', '2024-11-04', 'Driver', 'qrcodes/241104-152049-80143.png', 'Unknown', 'ACTIVE'),
+(33, '241104-163737-73856', 'Delima', 'Jhon Michael', 'Gallo', 'Male', '09123456777', 'Sta. Margarita', '', '', 'H08-24-000524', 'A,A1', '2024-08-01', 'HAHAHA123', '2024-11-04', 'Driver', 'qrcodes/241104-163737-73856.png', 'Unknown', 'ACTIVE'),
+(34, '241110-164849-89332', 'S', 'Jhon Michael', 'Gallo', 'Male', '09054254511', 'Daram, Samar', '', '', 'H08-24-000528', 'A,A1', '2024-10-10', 'HAH357', '2024-10-13', 'Driver', 'qrcodes/241110-164849-89332.png', 'Unknown', 'DEACTIVE'),
+(35, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_history`
+--
+
+CREATE TABLE `tbl_history` (
+  `ID` int(10) NOT NULL,
+  `CODE` varchar(30) NOT NULL,
+  `USERCODE` varchar(30) NOT NULL,
+  `PASSENGERNAME` varchar(100) NOT NULL,
+  `PASSENGERCONTACT` varchar(11) NOT NULL,
+  `PASSENGERADDRESS` text NOT NULL,
+  `DRIVERNAME` varchar(100) NOT NULL,
+  `DRIVERCONTACT` varchar(11) NOT NULL,
+  `DRIVERADDRESS` text NOT NULL,
+  `DLCODE` varchar(30) NOT NULL,
+  `DLEXPIRY` varchar(30) NOT NULL,
+  `MOTORPLATE` varchar(30) NOT NULL,
+  `FRANCHISEEXPIRY` varchar(30) NOT NULL,
+  `DATEON` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+--
+-- Dumping data for table `tbl_history`
+--
+
+INSERT INTO `tbl_history` (`ID`, `CODE`, `USERCODE`, `PASSENGERNAME`, `PASSENGERCONTACT`, `PASSENGERADDRESS`, `DRIVERNAME`, `DRIVERCONTACT`, `DRIVERADDRESS`, `DLCODE`, `DLEXPIRY`, `MOTORPLATE`, `FRANCHISEEXPIRY`, `DATEON`) VALUES
+(3, '241104-145257-948', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2027-03-16', 'HAH323', '2025-11-20', '2024-11-04  2:5'),
+(4, '241104-150150-922', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2027-03-16', 'HAH323', '2025-11-20', '2024-11-04  3:0'),
+(5, '241104-150738-260', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2027-03-16', 'HAH323', '2025-11-20', '2024-11-04  3:0'),
+(6, '241104-163956-887', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'Jhon Michael Delima', '09123456777', 'Sta. Margarita', 'H08-24-000524  -  A,A1', '2028-11-01', 'HAHAHA123', '2024-11-04', '2024-11-04  4:3'),
+(7, '241104-173303-137', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2027-03-16', 'HAH323', '2025-11-20', '2024-11-04  5:3'),
+(8, '241104-175329-901', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2027-03-16', 'HAH323', '2025-11-20', '2024-11-04  5:5'),
+(9, '241104-201848-307', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2027-03-16', 'HAH323', '2025-11-20', '2024-11-04  8:1'),
+(10, '241104-223956-303', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2027-03-16', 'HAH323', '2025-11-20', '2024-11-04  10:'),
+(11, '241104-231513-372', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2027-03-16', 'HAH323', '2025-11-20', '2024-11-04  11:'),
+(12, '241105-130717-231', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2027-03-16', 'HAH323', '2025-11-20', '2024-11-05  1:0'),
+(13, '241111-140056-716', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2024-05-16', 'HAH323', '2024-11-10', '2024-11-11  2:0'),
+(14, '241111-183148-867', '241111-110555-525', 'Bryan', '0912  3456 ', 'Unknown', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2024-05-16', 'HAH323', '2024-11-10', '2024-11-11  6:3'),
+(15, '241111-183319-334', '241111-110555-525', 'Bryan', '0912  3456 ', 'Unknown', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2024-05-16', 'HAH323', '2024-11-10', '2024-11-11  6:3'),
+(16, '241111-184355-272', '241008-113004-907', 'Bryan  H. Jao', '0965  3464 ', 'Samar', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2024-05-16', 'HAH323', '2024-11-10', '2024-11-11  6:4'),
+(17, '241111-184637-798', '241008-113004-907', 'Bryan  H. Jao', '0965  3464 ', 'Samar', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2024-05-16', 'HAH323', '2024-11-10', '2024-11-11  6:4'),
+(18, '241111-203111-121', '241111-110555-525', 'Bryan', '0912  3456 ', 'Unknown', 'Ivan Jade Raga', '09975634127', 'Brgy. Matobato P6', 'H08-24-000523  -  A,A1', '2024-11-04', 'HAH324', '2024-11-04', '2024-11-11  8:3'),
+(19, '241111-205615-519', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'Ivan Jade Raga', '09975634127', 'Brgy. Matobato P6', 'H08-24-000523  -  A,A1', '2024-11-04', 'HAH324', '2024-11-04', '2024-11-11  8:5'),
+(20, '241111-210420-672', '241111-110555-525', 'Bryan', '0912  3456 ', 'Unknown', 'Jhon Michael Delima', '09123456777', 'Sta. Margarita', 'H08-24-000524  -  A,A1', '2024-08-01', 'HAHAHA123', '2024-11-04', '2024-11-11  9:0'),
+(21, '241111-214329-187', '241111-110555-525', 'Bryan', '0912  3456 ', 'Unknown', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2024-05-16', 'HAH323', '2024-11-10', '2024-11-11  9:4'),
+(22, '241111-225219-596100', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2024-05-16', 'HAH323', '2024-11-10', '2024-11-11  10:'),
+(23, '241111-234643-170', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'Ivan Jade Raga', '09975634127', 'Brgy. Matobato P6', 'H08-24-000523  -  A,A1', '2024-11-04', 'HAH324', '2024-11-04', '2024-11-11  11:'),
+(24, '241111-235623-718', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'Ivan Jade Raga', '09975634127', 'Brgy. Matobato P6', 'H08-24-000523  -  A,A1', '2024-11-04', 'HAH324', '2024-11-04', '2024-11-11  11:'),
+(25, '241112-001009-479', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'Ivan Jade Raga', '09975634127', 'Brgy. Matobato P6', 'H08-24-000523  -  A,A1', '2024-11-04', 'HAH324', '2024-11-04', '2024-11-12  12:'),
+(26, '241112-221003-274', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'Ivan Jade Raga', '09975634127', 'Brgy. Matobato P6', 'H08-24-000523  -  A,A1', '2024-11-04', 'HAH324', '2024-11-04', '2024-11-12  10:'),
+(27, '241112-221302-133', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'Ivan Jade Raga', '09975634127', 'Brgy. Matobato P6', 'H08-24-000523  -  A,A1', '2024-11-04', 'HAH324', '2024-11-04', '2024-11-12  10:'),
+(28, '241112-221728-287', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'Ivan Jade Raga', '09975634127', 'Brgy. Matobato P6', 'H08-24-000523  -  A,A1', '2024-11-04', 'HAH324', '2024-11-04', '2024-11-12  10:'),
+(29, '241112-223159-171', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'Jhon Michael Delima', '09123456777', 'Sta. Margarita', 'H08-24-000524  -  A,A1', '2024-08-01', 'HAHAHA123', '2024-11-04', '2024-11-12  10:'),
+(30, '241112-224944-400', '241111-110555-525', 'Bryan', '0912  3456 ', 'Unknown', 'John Noel Labanancia', '09976534521', 'Brgy. San Policarpo Calbayog City, Samar', 'H08-24-000522  -  A,A1', '2024-05-16', 'HAH323', '2024-11-10', '2024-11-12  10:'),
+(31, '241112-225604-525', '241111-110555-525', 'Bryan', '0912  3456 ', 'Unknown', 'Jhon Michael Delima', '09123456777', 'Sta. Margarita', 'H08-24-000524  -  A,A1', '2024-08-01', 'HAHAHA123', '2024-11-04', '2024-11-12  10:'),
+(32, '241112-230101-368', '241111-110555-525', 'Bryan', '0912  3456 ', 'Unknown', 'Jhon Michael Delima', '09123456777', 'Sta. Margarita', 'H08-24-000524  -  A,A1', '2024-08-01', 'HAHAHA123', '2024-11-04', '2024-11-12  11:'),
+(33, '241113-083639-359', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'Jhon Michael Delima', '09123456777', 'Sta. Margarita', 'H08-24-000524  -  A,A1', '2024-08-01', 'HAHAHA123', '2024-11-04', '2024-11-13  8:3'),
+(34, '241113-084024-353', '241104-144017-681', 'North Oliver', '0967  8210 ', 'Brgy. San Policarpo P5', 'Jhon Michael Delima', '09123456777', 'Sta. Margarita', 'H08-24-000524  -  A,A1', '2024-08-01', 'HAHAHA123', '2024-11-04', '2024-11-13  8:4');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_staff`
+--
+
+CREATE TABLE `tbl_staff` (
+  `ID` int(10) NOT NULL,
+  `CODE` varchar(30) NOT NULL,
+  `LASTNAME` varchar(60) NOT NULL,
+  `FIRSTNAME` varchar(60) NOT NULL,
+  `MIDDLENAME` varchar(60) NOT NULL,
+  `GENDER` varchar(6) NOT NULL,
+  `ADDRESS` text NOT NULL,
+  `CONTACT` varchar(11) NOT NULL,
+  `POSITION` varchar(150) NOT NULL,
+  `USERNAME` varchar(60) NOT NULL,
+  `PASSWORD` varchar(60) NOT NULL,
+  `ROLE` varchar(15) NOT NULL,
+  `DATEON` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+--
+-- Dumping data for table `tbl_staff`
+--
+
+INSERT INTO `tbl_staff` (`ID`, `CODE`, `LASTNAME`, `FIRSTNAME`, `MIDDLENAME`, `GENDER`, `ADDRESS`, `CONTACT`, `POSITION`, `USERNAME`, `PASSWORD`, `ROLE`, `DATEON`) VALUES
+(15, '240918-102119-33751', 'Oliver', 'North', ' ', 'Male', ' ', '09094565467', 'IT', 'admin@admin.com', 'admin', 'Admin', '1726626079'),
+(22, '241028-135655-50767', 'Fuenteblanca', 'Ruby', 'Laay', 'Male', 'Hsshshjsjsj', '091111111', 'Staff', 'ruby123@gmail.com', 'ruby123', 'Admin', '1730095015');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_users`
+--
+
+CREATE TABLE `tbl_users` (
+  `ID` int(10) NOT NULL,
+  `USERCODE` varchar(30) NOT NULL,
+  `FULLNAME` varchar(200) NOT NULL,
+  `CONTACT` varchar(11) NOT NULL,
+  `ADDRESS` text NOT NULL,
+  `EMAIL` varchar(60) NOT NULL,
+  `USERNAME` varchar(60) NOT NULL,
+  `PASSWORD` varchar(60) NOT NULL,
+  `ROLE` varchar(15) NOT NULL,
+  `PROFILE` text NOT NULL,
+  `STATUS` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+
+--
+-- Dumping data for table `tbl_users`
+--
+
+INSERT INTO `tbl_users` (`ID`, `USERCODE`, `FULLNAME`, `CONTACT`, `ADDRESS`, `EMAIL`, `USERNAME`, `PASSWORD`, `ROLE`, `PROFILE`, `STATUS`) VALUES
+(33, '241104-144017-681', 'North Oliver', '09678210794', 'Brgy. San Policarpo P5', 'northoliver77@gmail.com', 'north7', 'north123', 'Passenger', 'Unknown', 'ACTIVE'),
+(34, '241104-144017-681', 'North Oliver', '09678210794', 'Brgy. San Policarpo P5', 'northoliver77@gmail.com', 'north7', 'north123', 'Passenger', 'Unknown', 'ACTIVE'),
+(35, '241104-144017-681', 'North Oliver', '09678210794', 'Brgy. San Policarpo P5', 'northoliver77@gmail.com', 'north7', 'north123', 'Passenger', 'Unknown', 'ACTIVE'),
+(36, '241104-144017-681', 'North Oliver', '09678210794', 'Brgy. San Policarpo P5', 'northoliver77@gmail.com', 'north7', 'north123', 'Passenger', 'Unknown', 'ACTIVE'),
+(37, '241111-110555-525', 'Bryan', '09123456879', 'Unknown', 'Unknown', 'bryan1', 'bryan123', 'Passenger', 'Unknown', 'ACTIVE'),
+(38, '241104-144017-681', 'North Oliver', '09678210794', 'Brgy. San Policarpo P5', 'northoliver77@gmail.com', 'north7', 'north123', 'Passenger', 'Unknown', 'ACTIVE');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `tbl_drivers`
+--
+ALTER TABLE `tbl_drivers`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tbl_history`
+--
+ALTER TABLE `tbl_history`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tbl_staff`
+--
+ALTER TABLE `tbl_staff`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `tbl_drivers`
+--
+ALTER TABLE `tbl_drivers`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT for table `tbl_history`
+--
+ALTER TABLE `tbl_history`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `tbl_staff`
+--
+ALTER TABLE `tbl_staff`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `tbl_users`
+--
+ALTER TABLE `tbl_users`
+  MODIFY `ID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
